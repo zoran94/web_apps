@@ -11,8 +11,8 @@ function fetchData(callFunction) {
     }).then(function (data) {
         console.log(data);
         const showArr = data.results.map(item => {
-            const { name, gender, email, picture } = item;
-            return new Person(name.first, name.last, gender, email, picture.medium);
+            const { name, gender, email, picture, dob,  } = item;
+            return new Person(name.first, name.last, gender, email, picture.medium, dob.date);
         })
         callFunction(showArr)
     })

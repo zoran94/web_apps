@@ -1,24 +1,32 @@
 
 
 const renderPeople = (response) => {
-
+    
     response.forEach(item => {
-        console.log(item.name)
+       
 
-        const displayCard = $(`<div class="card mb-3" style="max-width: 240px;">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="${item.picture}"class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h4>${item.name} ${item.lastName}<h4>
-                        </div>
-                    </div>
+        const displayCard = $(`
+                <div class="row">
+                <div class="">
+                <img src="${item.picture}"class="card-img" alt="...">
                 </div>
-            </div>`)
+                <div class="col-lg-8">
+                <div class="">
+                <h4>${item.name} ${item.lastName}<h4>
+                <p>Email: ${item.email}</p>
+                <p>${item.date}</p>
+                </div>
+                </div>
+                
+                </div>`
 
-        $("main").append(displayCard);
+                )
+                    if(item.gender === "female"){       
+                              
+                        $(".row").addClass("pink")
+                    }
+
+                $("main").append(displayCard);
 
     })
 }

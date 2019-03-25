@@ -4,15 +4,24 @@ import * as ui from "./ui.js"
 
 
 
-function init() {
-    data.fetchData(function (data) {
-        ui.renderPeople(data)
-
-    });
-
-
+const init = () => {
+    data.fetchPerson()
+        .then((person) => {
+            ui.renderPeople(person)
+        })
 }
 
+
+
+
+// function init() {
+//     data.fetchData(function (data) {
+//         ui.renderPeople(data)
+
+//     });
+
+
+// }
 export {
     init
 }

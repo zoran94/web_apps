@@ -14,6 +14,7 @@ function fetchData(callFunction) {
             const { name, gender, email, picture, dob,  } = item;
             return new Person(name.first, name.last, gender, email, picture.medium, dob.date);
         })
+        console.log(showArr)
         callFunction(showArr)
     })
 
